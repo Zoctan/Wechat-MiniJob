@@ -9,9 +9,9 @@
 
 ## 预览
 
-<img src="https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/index1.png" width="425"/>
+<img src="https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/index1.png" width="225"/>
 
-<img src="https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/index2.png" width="425"/>
+<img src="https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/index2.png" width="225"/>
 
 ![companyList](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/companyList.png) | ![company1](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/company1.png)
 ![company2](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/company2.png) | ![position1](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/position1.png)
