@@ -1,0 +1,28 @@
+<wxs module="util" src="../../../../wxs/util.wxs" />
+
+<view class="container" wx:if="{{ noData }}">
+  <view class="loading" wx:if="{{ loading }}">
+    <wux-spin wux-class="spin" size="small" />
+    <view class="text secondary-text-color font-size-28">加载中</view>
+  </view>
+  <view class="no-data" wx:if="{{ !loading && noData }}">
+    <image class="img" src="/images/noData.png" mode="widthFix"></image>
+    <text class="secondary-text-color font-size-28">暂无投递信息</text>
+  </view>
+</view>
+
+<view class="list" wx:if="{{ !loading && !noData }}">
+  <block wx:for="{{ recruitList }}" wx:key="recruit.id" data-item="{{ recruit }}" wx:for-item="recruit">
+
+    <navigator class="item" url="/pages/resume/index/index?from=hr&resumeId={{ recruit.resume.id }}">
+      <view class="top">
+        <view class="left">{{ recruit.position.name }}</view>
+        <view class="right">{{ recruit.resume.name }}</view>
+      </view>
+      <view class="center"></view>
+      <view class="font-size-28 secondary-text-color">投递时间：{{ util.formatTime(recruit.deliveryTime, '-') }}</view>
+    </navigator>
+
+  </block>
+</view>
+<wux-white-space size="default" />

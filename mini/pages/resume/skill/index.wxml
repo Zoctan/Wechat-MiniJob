@@ -1,0 +1,12 @@
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="技能" value="{{ skill }}" placeholder="请输入技能名称" error="{{ skillError }}" bind:change="onSkillChange" bind:focus="onSkillFocus" bind:blur="onSkillBlur" bind:clear="onSkillClear" bind:error="onSkillError"></wux-input>
+  </wux-cell>
+  <wux-cell title="掌握程度" hover-class="none">
+    <wux-rater slot="footer" value="{{ level }}" bind:change="onLevelChange" default-value="{{ 5 }}" />
+  </wux-cell>
+</view>
+
+<view class="button">
+  <wux-button block type="balanced" bind:click="onSubmit">完成</wux-button>
+</view>

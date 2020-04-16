@@ -1,0 +1,7 @@
+{
+  "desc": "人才招聘",
+  "rules": [{
+  "action": "allow",
+  "page": "*"
+  }]
+}

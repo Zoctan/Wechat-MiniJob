@@ -1,0 +1,27 @@
+.container {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .loading .text {
+  margin-left: 16rpx;
+}
+
+.container .no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .no-data .img {
+  width: 140rpx;
+  margin-bottom: 40rpx;
+}

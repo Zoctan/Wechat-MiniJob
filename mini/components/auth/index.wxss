@@ -1,0 +1,48 @@
+.auth-mask {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.auth-mask .auth-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  display: flex;
+}
+
+.auth-box .auth-left {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.auth-box .auth-left .logo {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.auth-box .auth-right {
+  flex: 4;
+}
+
+.auth-box .auth-right .auth-description {
+  color: #212121;
+  margin: 20rpx 20rpx 0 20rpx;
+}
+
+.auth-box .auth-right .auth-button {
+  display: flex;
+}
+
+.auth-box .auth-right .auth-button wux-button {
+  margin: 0 20rpx;
+  flex: 1;
+}

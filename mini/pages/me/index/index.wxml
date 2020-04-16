@@ -1,0 +1,49 @@
+<view class="header">
+  <block wx:if="{{ isAuth }}">
+    <navigator class="info" url="/pages/me/resume/index">
+      <image class="avatar" mode="aspectFit" src="{{ wechatInfo.avatar }}" />
+      <view class="nickname">{{ wechatInfo.nickname }}</view>
+    </navigator>
+    <view class="notice">
+      <wux-badge count="3">
+        <wux-icon type="ios-notifications" size="50rpx" color="#fff" />
+      </wux-badge>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="info" catchtap="onLogin">
+      <image class="avatar" mode="aspectFit" src="/images/avatar.png" />
+      <view class="nickname">未登录</view>
+    </view>
+  </block>
+</view>
+
+<view class="card-box">
+  <view class="group" wx:if="{{ !isHr }}">
+    <view class="title primary-text-color">我的招聘</view>
+    <view class="list">
+      <wux-cell thumb="/images/position.png" title="职位管理" is-link url="/pages/hr/position/list/index" open-type="navigateTo"></wux-cell>
+      <wux-cell thumb="/images/mange.png" title="招聘管理" is-link url="/pages/hr/recruit/list/index" open-type="navigateTo"></wux-cell>
+    </view>
+  </view>
+
+  <view class="group">
+    <view class="title primary-text-color">我的求职</view>
+    <view class="list">
+      <wux-cell thumb="/images/resume.png" title="个人简历" is-link url="/pages/resume/index/index" open-type="navigateTo"></wux-cell>
+      <wux-cell thumb="/images/collect.png" title="职位收藏" is-link url="/pages/me/collect/index" open-type="navigateTo"></wux-cell>
+      <wux-cell thumb="/images/log.png" title="求职记录" is-link url="/pages/me/record/index" open-type="navigateTo"></wux-cell>
+    </view>
+  </view>
+</view>
+
+<view class="login-mask" wx:if="{{ showLogin }}">
+  <view class="login-button">
+    <navigator url="/pages/me/login/index?from=hr">
+      <wux-button block type="balanced">企业用户</wux-button>
+    </navigator>
+    <navigator url="/pages/me/login/index?from=appi">
+      <wux-button block type="assertive">个人用户</wux-button>
+    </navigator>
+  </view>
+</view>

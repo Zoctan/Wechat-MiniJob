@@ -1,0 +1,37 @@
+<wxs module="util" src="../../../../wxs/util.wxs" />
+
+<view class="container" wx:if="{{ noData }}">
+  <view class="loading" wx:if="{{ loading }}">
+    <wux-spin wux-class="spin" size="small" />
+    <view class="text secondary-text-color font-size-28">加载中</view>
+  </view>
+  <view class="no-data" wx:if="{{ !loading && noData }}">
+    <image class="img" src="/images/noData.png" mode="widthFix"></image>
+    <text class="secondary-text-color font-size-28">暂无职位信息</text>
+  </view>
+</view>
+
+<view class="list" wx:if="{{ !loading && !noData }}">
+  <block wx:for="{{ positionList }}" wx:key="position.id" data-item="{{ position }}" wx:for-item="position">
+    <navigator class="item" url="/pages/position/detail/index?positionId={{ position.id }}">
+      <view class="top">
+        <view class="urgent" wx:if="{{ position.isUrgent }}">急招</view>
+        <view class="name font-size-34 text-overflow">{{ position.name }}</view>
+        <view class="salary red-color">{{ position.salaryNegotiated ? '面议' : (position.salaryLowest || 0) + 'k-' + (position.salaryHighest || 0) + 'k' }}</view>
+      </view>
+      <view class="center secondary-text-color font-size-26">
+        <view class="tag-list">
+          <view class="tag">{{ position.workCity }}</view>
+          <view class="tag" wx:if="{{ position.workYearLabel !== '不限' }}">{{ position.workYearLabel }}</view>
+          <view class="tag" wx:if="{{ position.educationLabel !== '不限' }}">{{ position.educationLabel }}</view>
+          <view class="tag" wx:if="{{ position.typeLabel !== '不限' }}">{{ position.typeLabel }}</view>
+        </view>
+        <view class="time">{{ util.formatTime(position.createTime, '-') }}</view>
+      </view>
+    </navigator>
+  </block>
+</view>
+<navigator class="button" url="/pages/hr/position/new/index">
+  <wux-button block type="balanced">添加职位</wux-button>
+</navigator>
+<wux-white-space size="default" />

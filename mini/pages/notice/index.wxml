@@ -1,0 +1,22 @@
+<view class="container" wx:if="{{ noData }}">
+  <view class="loading" wx:if="{{ loading }}">
+    <wux-spin wux-class="spin" size="small" />
+    <view class="text secondary-text-color font-size-28">加载中</view>
+  </view>
+  <view class="no-data" wx:if="{{ !loading && noData }}">
+    <image class="img" src="/images/noData.png" mode="widthFix"></image>
+    <text class="secondary-text-color font-size-28">没有查询到数据</text>
+  </view>
+</view>
+
+<view class="notice" wx:if="{{ !loading && !noData }}">
+  <view class="title primary-text-color">
+    {{ title }}
+  </view>
+  <view class="time secondary-text-color">
+    {{ time }}
+  </view>
+  <view class="description primary-text-color">
+    <rich-text nodes="{{ description }}"></rich-text>
+  </view>
+</view>

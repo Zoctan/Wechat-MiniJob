@@ -1,0 +1,128 @@
+.header {
+  background: #03a9f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 246rpx;
+}
+
+.header .banner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-box .banner {
+  width: 200rpx;
+  height: 58rpx;
+}
+
+.banner-box .title {
+  color: #fff;
+}
+
+.header .search-box {
+  width: 70%;
+  margin-top: 48rpx;
+}
+
+.position-list {
+  padding-top: 24rpx;
+}
+
+.position-list .position {
+  padding: 24rpx 24rpx 8rpx 24rpx;
+  margin: 0 24rpx 24rpx;
+  background: #fff;
+  box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(211, 211, 211, 0.68);
+  border-radius: 8rpx;
+}
+
+.position-list .position .top {
+  display: flex;
+  margin-bottom: 12rpx;
+  align-items: center;
+}
+
+.position-list .position .top .urgent {
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+  background: #f00;
+  border-radius: 6rpx;
+  margin-right: 16rpx;
+  font-size: 22rpx;
+  color: #fff;
+  height: 30rpx;
+}
+
+.position-list .position .top .position-name {
+  flex: 1;
+}
+
+.position-list .position .top .salary {
+  text-align: right;
+}
+
+.position-list .position .center {
+  display: flex;
+  margin-bottom: 12rpx;
+  padding: 8rpx 0 16rpx 0;
+}
+
+.position-list .position .center .tag-list {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.position-list .position .center .tag-list .tag {
+  height: 38rpx;
+  line-height: 38rpx;
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+  background: rgba(242, 246, 252, 1);
+  border-radius: 5rpx;
+  margin-right: 16rpx;
+  font-size: 24rpx;
+  color: #757575;
+  margin-bottom: 12rpx;
+}
+
+.position-list .position .center .time {
+  text-align: right;
+}
+
+.position-list .position .bottom {
+  display: flex;
+  align-items: center;
+}
+
+.position-list .position .bottom .company-logo {
+  width: 64rpx;
+  height: 64rpx;
+  margin-right: 12rpx;
+}
+
+.position-list .no-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200rpx;
+}
+
+.position-list .no-data .img {
+  width: 140rpx;
+  margin-bottom: 30rpx;
+}
+
+.position-list .loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.position-list .loading .text {
+  margin-left: 16rpx;
+}

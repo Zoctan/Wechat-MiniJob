@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "求职意愿",
+  "usingComponents": {
+    "area-picker": "/components/area-picker/index",
+    "wux-button": "/ui/button/index",
+    "wux-picker": "/ui/picker/index",
+    "wux-cell": "/ui/cell/index",
+    "wux-input": "/ui/input/index"
+  }
+}

@@ -1,0 +1,103 @@
+<wxs module="util" src="../../../wxs/util.wxs" />
+
+<view class="container" wx:if="{{ noData }}">
+  <!-- 加载 -->
+  <view class="loading" wx:if="{{ loading }}">
+    <wux-spin wux-class="spin" size="small" />
+    <view class="text secondary-text-color font-size-28">加载中</view>
+  </view>
+
+  <!-- 无职位信息 -->
+  <view class="no-data" wx:if="{{ !loading && noData }}">
+    <image class="img" src="/images/noData.png" mode="widthFix"></image>
+    <text class="secondary-text-color font-size-28">该职位已被删除</text>
+    <navigator class="button" url="/pages/position/list/index" open-type="switchTab">返回首页</navigator>
+  </view>
+</view>
+
+<!-- 职位信息 -->
+<view class="position-detail" wx:if="{{ !loading && !noData }}">
+  <!-- 基本信息 -->
+  <view class="card-box">
+    <view class="position-box">
+      <view class="position-name primary-text-color">{{ position.name }}</view>
+      <view class="flex-row-container">
+        <view class="salary red-color">{{ position.salaryNegotiated ? '面议' : (position.salaryLowest || 0) + 'k-' + (position.salaryHighest || 0) + 'k' }}</view>
+        <wux-timeago class="time font-size-24 secondary-text-color" to="{{ util.formatTime(position.createTime) }}" refreshable />
+      </view>
+      <view class="flex-row-container row-warp">
+        <view class="require-item">
+          <wux-icon class="icon" type="ios-briefcase" size="30rpx" color="#5cb3ff" />
+          <view class="text primary-text-color">经验：{{ position.workYearLabel }}</view>
+        </view>
+        <view class="require-item">
+          <wux-icon class="icon" type="ios-school" size="30rpx" color="#5cb3ff" />
+          <view class="text primary-text-color">学历：{{ position.educationLabel }}</view>
+        </view>
+        <view class="require-item">
+          <wux-icon class="icon" type="ios-paper" size="30rpx" color="#5cb3ff" />
+          <view class="text primary-text-color">性质：{{ position.typeLabel }}</view>
+        </view>
+        <view class="require-item">
+          <wux-icon class="icon" type="ios-paper" size="30rpx" color="#5cb3ff" />
+          <view class="text primary-text-color">性质：{{ position.typeLabel }}</view>
+        </view>
+        <view class="require-item">
+          <wux-icon class="icon" type="ios-paper" size="30rpx" color="#5cb3ff" />
+          <view class="text primary-text-color">性质：{{ position.typeLabel }}</view>
+        </view>
+      </view>
+    </view>
+    <navigator class="nav-box" wx:if="{{ position.workCity }}" url="/pages/map/index?title={{ company.name }}&latitude={{ position.workCityLatitude }}&longitude={{ position.workCityLongitude }}">
+      <view class="left">
+        <wux-icon type="ios-pin" size="32rpx" color="#5cb3ff" />
+      </view>
+      <view class="center">
+        <view class="city primary-text-color font-size-28">{{ position.workCity }}</view>
+        <view class="city-detail secondary-text-color font-size-24">{{ position.workCityDetail }}</view>
+      </view>
+      <view class="right">
+        <wux-icon type="ios-arrow-forward" color="#bdbdbd" size="26rpx" />
+      </view>
+    </navigator>
+    <navigator class="nav-box" wx:if="{{ company.name }}" url="/pages/company/detail/index?companyId={{ company.id }}">
+      <view class="left">
+        <image class="logo" src="{{ company.logoUrl ? company.logoUrl : '/images/companyLogo.jpg' }}" />
+      </view>
+      <view class="center">
+        <view class="company-name primary-text-color font-size-28">{{ company.name }}</view>
+        <view class="tag secondary-text-color font-size-24">{{ company.industryLabel }} | {{ company.scaleLabel }}</view>
+      </view>
+      <view class="right">
+        <wux-icon type="ios-arrow-forward" color="#bdbdbd" size="26rpx" />
+      </view>
+    </navigator>
+  </view>
+  <!-- 描述、亮点 -->
+  <view class="card-box">
+    <view class="description">
+      <view class="header">职位描述</view>
+      <view class="primary-text-color font-size-26">
+        <rich-text nodes="{{ position.description }}"></rich-text>
+      </view>
+    </view>
+    <view class="welfare">
+      <view class="header">职位亮点</view>
+      <view class="tag-list">
+        <view class="tag font-size-24" wx:for="{{ position.tagList }}" wx:key="id" wx:for-item="tag">{{ tag.name }}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部按钮  -->
+  <view class="bottom-buttons">
+    <view class="collect-box" bindtap="onCollected">
+      <wux-icon class="icon" type="{{ position.collected ? 'ios-star' : 'ios-star-outline' }}" size="36rpx" color="#5cb3ff" />
+      <view class="primary-text-color">收藏</view>
+    </view>
+    <view class="share-box" bindtap="onShared">
+      <wux-icon class="icon" type="ios-share-alt" size="36rpx" color="#49cc93" />
+      <view class="primary-text-color">分享</view>
+    </view>
+    <navigator class="delivery">投递简历</navigator>
+  </view>
+</view>

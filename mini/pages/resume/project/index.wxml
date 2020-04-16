@@ -1,0 +1,26 @@
+<wxs module="util" src="../../../wxs/util.wxs" />
+
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="项目" value="{{ project }}" placeholder="请输入项目名称" error="{{ projectError }}" bind:change="onProjectChange" bind:focus="onProjectFocus" bind:blur="onProjectBlur" bind:clear="onProjectClear" bind:error="onProjectError"></wux-input>
+  </wux-cell>
+  <wux-date-picker mode="date" value="{{ startTime }}" bind:confirm="onStartTimeConfirm" minDate="1949-10-01 00:00:00" maxDate="{{ util.currentTime('-') }}">
+    <wux-cell title="开始时间" is-link extra="{{ displayStartTime }}"></wux-cell>
+  </wux-date-picker>
+  <wux-date-picker mode="date" value="{{ endTime }}" bind:confirm="onEndTimeConfirm" minDate="1949-10-01 00:00:00" maxDate="{{ util.currentTime('-') }}">
+    <wux-cell title="结束时间" is-link extra="{{ displayEndTime }}"></wux-cell>
+  </wux-date-picker>
+  <wux-cell title="进行中" hover-class="none">
+    <wux-switch slot="footer" color="calm" value="{{ isProcessing }}" bind:change="onIsProcessingChange" />
+  </wux-cell>
+</view>
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-textarea clear controlled hasCount rows="6" maxlength="1000" value="{{ description }}" placeholder="项目描述" error="{{ descriptionError }}" bind:change="onDescriptionChange" bind:focus="onDescriptionFocus" bind:blur="onDescriptionBlur" bind:clear="onDescriptionClear"
+      bind:error="onDescriptionError"></wux-textarea>
+  </wux-cell>
+</view>
+
+<view class="button">
+  <wux-button block type="balanced" bind:click="onSubmit">完成</wux-button>
+</view>

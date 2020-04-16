@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "招聘管理",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wux-white-space": "/ui/white-space/index",
+    "wux-button": "/ui/button/index",
+    "wux-spin": "/ui/spin/index"
+  }
+}

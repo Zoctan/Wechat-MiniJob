@@ -1,0 +1,10 @@
+{
+  "backgroundColor": "#f1f5f8",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wux-icon": "/ui/icon/index",
+    "wux-white-space": "/ui/white-space/index",
+    "wux-search-bar": "/ui/search-bar/index",
+    "wux-spin": "/ui/spin/index"
+  }
+}

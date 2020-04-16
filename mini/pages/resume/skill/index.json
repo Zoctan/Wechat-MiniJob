@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "技能",
+  "usingComponents": {
+    "wux-button": "/ui/button/index",
+    "wux-rater": "/ui/rater/index",
+    "wux-cell": "/ui/cell/index",
+    "wux-input": "/ui/input/index"
+  }
+}

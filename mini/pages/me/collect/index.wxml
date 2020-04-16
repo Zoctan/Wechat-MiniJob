@@ -1,0 +1,46 @@
+<view class="container" wx:if="{{ noData }}">
+  <view class="loading" wx:if="{{ loading }}">
+    <wux-spin wux-class="spin" size="small" />
+    <view class="text secondary-text-color font-size-28">加载中</view>
+  </view>
+  <view class="no-data" wx:if="{{ !loading && noData }}">
+    <image class="img" src="/images/noData.png" mode="widthFix"></image>
+    <text class="secondary-text-color font-size-28">没有查询到数据</text>
+  </view>
+</view>
+
+<view class="list" wx:if="{{ !loading && !noData }}">
+  <block wx:for="{{ collectList }}" wx:for-item="collect" wx:key="collect.id">
+    <view class="card-box">
+      <navigator class="company border-bottom" url="/pages/company/detail/index?companyId={{ collect.company.id }}">
+        <view class="logo">
+          <image src="{{ collect.company.logoUrl ? collect.company.logoUrl : '/images/companyLogo.png' }}" />
+        </view>
+        <view class="font-size-34 primary-text-color"> {{ collect.company.name }} </view>
+      </navigator>
+      <view class="list">
+        <block wx:for="{{ collect.positionList }}" wx:for-item="position" wx:key="position.id">
+          <navigator class="item" url="/pages/position/detail/index?positionId={{ position.id }}">
+            <view class="top">
+              <view class="urgent" wx:if="{{ position.isUrgent }}">急招</view>
+              <view class="left font-size-34 primary-text-color">{{ position.name }}</view>
+              <view class="" catchtap="onCancelCollect">
+                <wux-icon type="ios-star" size="48rpx" color="#03a9f4" />
+              </view>
+            </view>
+            <view class="center">
+              <view class="tag">{{ position.location }}</view>
+              <view class="tag">{{ position.typeLabel }}</view>
+              <view class="tag">{{ position.salaryNegotiated ? '面议' : (position.salaryLowest || 0) + 'k-' + (position.salaryHighest || 0) + 'k' }}</view>
+            </view>
+            <view class="bottom">
+              <view class="left font-size-24 secondary-text-color">发布时间：{{ position.createTime }}</view>
+              <view class="font-size-24 secondary-text-color">浏览量：{{ position.visit }} </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </block>
+  <wux-white-space size="default" />
+</view>

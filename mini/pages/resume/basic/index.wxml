@@ -1,0 +1,36 @@
+<wxs module="util" src="../../../wxs/util.wxs" />
+
+<view class="card-box">
+  <view class="avatar">
+    <wux-upload controlled max="1" count="1" listType="picture-card" fileList="{{ imageList }}" url="{{ imageUploadUrl }}" bind:change="onUploadImageChange" bind:complete="onUploadImageComplete" bind:preview="onUploadImagePreview" bind:remove="onUploadImageRemove">
+      <wux-icon type="ios-image" size="24" color="#757575" />
+    </wux-upload>
+    <view class="secondary-text-color font-size-26">真实头像</view>
+  </view>
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="姓名" value="{{ name }}" placeholder="请输入姓名" error="{{ nameError }}" bind:change="onNameChange" bind:focus="onNameFocus" bind:blur="onNameBlur" bind:clear="onNameClear" bind:error="onNameError"></wux-input>
+  </wux-cell>
+  <wux-date-picker mode="date" value="{{ birthday }}" bind:confirm="onBirthdayConfirm" minDate="1949-10-01 00:00:00" maxDate="{{ util.currentTime('-') }}">
+    <wux-cell title="生日" extra="{{ displayBirthday }}" is-link></wux-cell>
+  </wux-date-picker>
+  <wux-picker options="{{ sexs }}" value="{{ sex }}" cascade cols="1" bind:confirm="onSexConfirm">
+    <wux-cell title="性别" extra="{{ displaySex }}" is-link></wux-cell>
+  </wux-picker>
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="邮箱" value="{{ email }}" placeholder="请输入邮箱" error="{{ emailError }}" bind:change="onEmailChange" bind:focus="onEmailFocus" bind:blur="onEmailBlur" bind:clear="onEmailClear" bind:error="onEmailError"></wux-input>
+  </wux-cell>
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="手机" type="number" value="{{ phone }}" placeholder="请输入手机" error="{{ phoneError }}" bind:change="onPhoneChange" bind:focus="onPhoneFocus" bind:blur="onPhoneBlur" bind:clear="onPhoneClear" bind:error="onPhoneError"></wux-input>
+  </wux-cell>
+</view>
+
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-textarea clear controlled hasCount rows="3" maxlength="100" value="{{ introduction }}" placeholder="请输入自我介绍" error="{{ introductionError }}" bind:change="onIntroductionChange" bind:focus="onIntroductionFocus" bind:blur="onIntroductionBlur" bind:clear="onIntroductionClear"
+      bind:error="onIntroductionError"></wux-textarea>
+  </wux-cell>
+</view>
+
+<view class="button">
+  <wux-button block type="balanced" bind:click="onSubmit">完成</wux-button>
+</view>

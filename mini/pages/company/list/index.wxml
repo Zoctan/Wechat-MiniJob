@@ -1,0 +1,57 @@
+<!-- 轮播图 -->
+<swiper class="swiper" indicator-dots="true" autoplay="true" circular="true">
+  <block wx:for="{{ swiperList }}" wx:key="swiper.url" wx:for-item="swiper">
+    <swiper-item catchtap="onSwiper" data-item="{{ swiper }}">
+      <image src="{{ swiper.url }}" class="swiper-img" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="search-box">
+  <wux-search-bar clear maxlength="25" controlled value="{{ searchValue }}" placeholder="搜索公司名称" bind:change="onSearchChange" bind:focus="onSearchFocus" bind:blur="onSearchBlur" bind:confirm="onSearchConfirm" bind:clear="onSearchClear" bind:cancel="onSearchCancel"
+  />
+</view>
+<!-- 筛选 -->
+<!-- 列表区域 -->
+<view class="company-list">
+  <!-- 列表 -->
+  <block wx:if="{{ companyList && companyList.length > 0 }}" wx:for="{{ companyList }}" wx:key="company.id" data-item="{{ company }}" wx:for-item="company">
+    <navigator class="company" url="/pages/company/detail/index?companyId={{ company.id }}">
+      <view class="top border-bottom">
+        <view class="logo">
+          <image src="{{ company.logoUrl ? company.logoUrl : '/images/companyLogo.png' }}" />
+        </view>
+        <view class="info">
+          <view class="name font-size-32 primary-text-color text-overflow">{{ company.name || '' }}</view>
+          <view class="word font-size-26 secondary-text-color text-overflow">{{ company.word || '' }}</view>
+          <view class="tag-list">
+            <view class="tag" wx:if="{{ company.scaleLabel }}">{{ company.scaleLabel }}</view>
+            <view class="tag" wx:if="{{ company.industryLabel }}">{{ company.industryLabel }}</view>
+            <view class="tag" wx:if="{{ company.processLabel }}">{{ company.processLabel }}</view>
+          </view>
+        </view>
+      </view>
+      <view class="bottom">
+        <view class="location">
+          <wux-icon class="icon" type="ios-pin" size="26rpx" color="#757575" />
+          <view class="secondary-text-color">{{ company.location }}</view>
+        </view>
+        <view class="position" wx:if="{{ company.positionCount }}">
+          <wux-icon class="icon" type="ios-briefcase" size="26rpx" color="#757575" />
+          <view class="secondary-text-color">
+            <text class="primary-color">{{ company.positionCount }}</text>个在招职位</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <wux-white-space size="default" />
+  <!-- 无数据 -->
+  <view class="no-data" wx:if="{{ noData }}">
+    <image class="img" src="/images/noData.png" mode="widthFix" />
+    <view class="secondary-text-color font-size-28">没有查询到数据</view>
+  </view>
+  <!-- 加载 -->
+  <view class="loading" wx:if="{{ loading }}">
+    <wux-spin wux-class="spin" size="small" />
+    <view class="text secondary-text-color font-size-28">加载中</view>
+  </view>
+</view>

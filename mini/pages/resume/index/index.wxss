@@ -1,0 +1,84 @@
+.container {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .loading .text {
+  margin-left: 16rpx;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20rpx;
+  background: #03a9f4;
+}
+
+.info .avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin-right: 24rpx;
+}
+
+.info .edit {
+  top: 15rpx;
+  right: 34rpx;
+  position: absolute;
+}
+
+.card-box {
+  margin: 24rpx 0 24rpx 0;
+  background: #fff;
+}
+
+.card-box .header {
+  padding: 8rpx;
+  display: flex;
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.card-box .header .title {
+  flex: 1;
+  font-size: 36rpx;
+}
+
+.card-box .header .edit {
+}
+
+.card-box .content {
+  padding: 18rpx 23rpx 18rpx 34rpx;
+}
+
+.card-box .content .list {
+}
+
+.card-box .content .list .item {
+  padding: 12rpx 0 12rpx 0;
+}
+
+.card-box .content .list .edit {
+  position: absolute;
+  right: 34rpx;
+}
+
+.card-box .content .add-data {
+  color: #03a9f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-box .content .add-data .text {
+  margin-left: 5rpx;
+}

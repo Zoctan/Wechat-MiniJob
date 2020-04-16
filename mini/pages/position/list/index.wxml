@@ -1,0 +1,51 @@
+<wxs module="util" src="../../../wxs/util.wxs" />
+
+<view class="header">
+  <view class="banner-box">
+    <image class="banner" src="/images/banner.png" />
+    <view class="title font-size-24 mt12">招聘大杀器</view>
+  </view>
+  <view class="search-box">
+    <wux-search-bar clear maxlength="25" controlled value="{{ searchValue }}" placeholder="搜索职位名称" bind:change="onSearchChange" bind:focus="onSearchFocus" bind:blur="onSearchBlur" bind:confirm="onSearchConfirm" bind:clear="onSearchClear" bind:cancel="onSearchCancel"
+    />
+  </view>
+</view>
+<!-- 筛选 -->
+<filterbar mode="position" top="378rpx" bind:confirm="onFilterConfirm" />
+<!-- 列表区域  -->
+<view class="position-list">
+  <!-- 列表 -->
+  <block wx:if="{{ positionList && positionList.length > 0 }}" wx:for="{{ positionList }}" wx:key="position.id" data-item="{{ position }}" wx:for-item="position">
+    <navigator class="position" url="/pages/position/detail/index?positionId={{ position.id }}">
+      <view class="top">
+        <view class="urgent" wx:if="{{ position.isUrgent }}">急招</view>
+        <view class="position-name text-overflow">{{ position.name }}</view>
+        <view class="salary red-color">{{ position.salaryNegotiated ? '面议' : (position.salaryLowest || 0) + 'k-' + (position.salaryHighest || 0) + 'k' }}</view>
+      </view>
+      <view class="center secondary-text-color font-size-26 border-bottom">
+        <view class="tag-list">
+          <view class="tag">{{ position.workCity }}</view>
+          <view class="tag" wx:if="{{ position.workYearLabel !== '不限' }}">{{ position.workYearLabel }}</view>
+          <view class="tag" wx:if="{{ position.educationLabel !== '不限' }}">{{ position.educationLabel }}</view>
+          <view class="tag" wx:if="{{ position.typeLabel !== '不限' }}">{{ position.typeLabel }}</view>
+        </view>
+        <wux-timeago class="time" to="{{ util.formatTime(position.createTime) }}" refreshable />
+      </view>
+      <view class="bottom">
+        <image class="company-logo" src="{{ position.company.logoUrl ? position.company.logoUrl : '/images/companyLogo.png' }}" />
+        <text class="text-overflow secondary-text-color font-size-26">{{ position.company.name || "" }}</text>
+      </view>
+    </navigator>
+  </block>
+  <wux-white-space size="default" />
+  <!-- 无数据 -->
+  <view class="no-data" wx:if="{{ noData }}">
+    <image class="img" src="/images/noData.png" mode="widthFix" />
+    <view class="secondary-text-color font-size-28">没有查询到数据</view>
+  </view>
+  <!-- 加载 -->
+  <view class="loading" wx:if="{{ loading }}">
+    <wux-spin wux-class="spin" size="small" />
+    <view class="text secondary-text-color font-size-28">加载中</view>
+  </view>
+</view>

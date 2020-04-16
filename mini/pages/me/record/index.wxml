@@ -1,0 +1,25 @@
+<view class="container" wx:if="{{ noData }}">
+  <view class="loading" wx:if="{{ loading }}">
+    <wux-spin wux-class="spin" size="small" />
+    <view class="text secondary-text-color font-size-28">加载中</view>
+  </view>
+  <view class="no-data" wx:if="{{ !loading && noData }}">
+    <image class="img" src="/images/noData.png" mode="widthFix"></image>
+    <text class="secondary-text-color font-size-28">没有查询到数据</text>
+  </view>
+</view>
+
+<view class="list" wx:if="{{ !loading && !noData }}">
+  <wux-accordion-group accordion default-current="{{ ['0'] }}">
+    <block wx:for="{{ recordList }}" wx:for-item="record" wx:key="record.id">
+      <wux-accordion title="{{ record.position.name + ' - ' + record.company.name }}">
+        <wux-steps direction="vertical">
+          <block wx:for="{{ record.list }}" wx:key="index">
+            <wux-step status="{{ item.status }}" title="{{ item.title }}" content="{{ item.time + ' ' + item.content }}"></wux-step>
+          </block>
+        </wux-steps>
+      </wux-accordion>
+    </block>
+  </wux-accordion-group>
+  <wux-white-space size="default" />
+</view>

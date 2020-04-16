@@ -1,0 +1,340 @@
+.container {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .loading .text {
+  margin-left: 16rpx;
+}
+
+.container .no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .no-data .img {
+  width: 140rpx;
+  margin-bottom: 40rpx;
+}
+
+.container .no-data .button {
+  margin-top: 60rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  background: rgba(92, 179, 255, 1);
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.nav-box {
+  display: flex;
+  align-items: center;
+}
+
+.nav-box .left {
+  margin-right: 12rpx;
+  display: flex;
+  align-items: center;
+}
+
+.nav-box .center {
+  flex: 1;
+}
+
+.nav-box .right {
+  text-align: right;
+}
+
+.nav-box .center .city {
+  line-height: 1.5;
+  margin-bottom: 8rpx;
+}
+
+.nav-box .center .city-detail {
+  line-height: 18rpx;
+}
+
+.company-detail {
+  padding: 30rpx 20rpx 0;
+}
+
+.card-box {
+  padding: 32rpx 32rpx 28rpx 32rpx;
+  margin-bottom: 24rpx;
+  background: #fff;
+  box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(211, 211, 211, 0.68);
+  border-radius: 8rpx;
+  position: relative;
+}
+
+.card-box .company-name {
+  width: 430rpx;
+  font-size: 42rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-box .company-word {
+  font-size: 28rpx;
+  color: rgba(102, 102, 102, 1);
+  margin-top: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+.card-box .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 28rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.card-box .tag-list .tag {
+  height: 38rpx;
+  line-height: 38rpx;
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+  background: rgba(242, 246, 252, 1);
+  border-radius: 5rpx;
+  margin-right: 16rpx;
+  margin-bottom: 12rpx;
+  font-size: 24rpx;
+  color: #757575;
+}
+
+.logo {
+  position: absolute;
+  top: 30rpx;
+  right: 40rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(242, 246, 252, 1);
+}
+
+.company-position-box {
+  width: 710rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 20px 0px rgba(92, 179, 255, 0.24);
+  border-radius: 8rpx;
+  padding: 50rpx 28rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.company-position-box .tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 356rpx;
+  height: 48rpx;
+  margin: 0 auto 92rpx;
+}
+
+.company-position-box .tabs .tab {
+  width: 154rpx;
+  line-height: 48rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #666;
+  position: relative;
+}
+
+.company-position-box .tabs .tab.active {
+  color: #fff;
+  background: rgba(92, 179, 255, 1);
+  box-shadow: 0rpx 0rpx 3rpx 0rpx rgba(151, 206, 255, 1);
+  border-radius: 24rpx;
+}
+
+.company-box, .position-box {
+  padding-bottom: 50rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.info-header {
+  line-height: 45rpx;
+  margin-top: 90rpx;
+  margin-bottom: 25rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+
+.info-header::before, .info-header::after {
+  content: '';
+  width: 120rpx;
+  height: 1px;
+  background: #eee;
+  position: absolute;
+  top: 50%;
+}
+
+.info-header::before {
+  left: 70rpx;
+}
+
+.info-header::after {
+  right: 70rpx;
+}
+
+.company-introduction .content {
+  max-height: 272rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+}
+
+.company-introduction .content.height-auto {
+  height: auto;
+  max-height: none;
+  font-size: 28rpx;
+}
+
+.company-introduction .arrow-up-down {
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+.company-contact .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-contact .content .contact-person {
+  margin-bottom: 8rpx;
+  display: flex;
+  align-items: center;
+}
+
+.company-contact .content .contact-phone {
+  display: flex;
+  align-items: center;
+}
+
+.company-address .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 职位  */
+
+.search-bar {
+  width: 650rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  background-color: rgba(248, 248, 248, 1);
+  margin: -50rpx auto 50rpx;
+}
+
+.search-bar .search-bar-box {
+  height: 72rpx;
+  border-radius: 36rpx;
+  padding-left: 28rpx;
+  padding-right: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar .icon-search {
+  width: 14px;
+  height: 14px;
+  margin-right: 12rpx;
+}
+
+.search-bar .search-bar-input {
+  flex: 1;
+}
+
+.position-box {
+  padding-bottom: 0;
+  min-height: 220rpx;
+}
+
+.position-box .no-position {
+  text-align: center;
+  color: #999;
+}
+
+.position-box .loading {
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.position-box .loading .text {
+  margin-left: 16rpx;
+}
+
+.position {
+  padding: 32rpx 4rpx;
+  /* border-bottom: 1rpx solid #e5e5e5; */
+}
+
+.position-list .position:last-child::after {
+  display: none;
+}
+
+.position .top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12rpx;
+}
+
+.position .top .name {
+  color: #565454;
+  font-size: 32rpx;
+}
+
+.position .top .salary {
+  color: #ff566b;
+  font-size: 34rpx;
+}
+
+.position .center {
+  display: flex;
+  margin-bottom: 12rpx;
+}
+
+.position .center .tag {
+  line-height: 45rpx;
+  margin-right: 18rpx;
+  padding: 0 8rpx;
+  border-radius: 5rpx;
+  background: rgba(249, 249, 249, 1);
+  font-size: 26rpx;
+  color: #999;
+}
+
+.position .bottom {
+  display: flex;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.position .bottom .time {
+  flex: 1;
+  margin-right: 18rpx;
+}
+
+.position .bottom .visit {
+  flex: 1;
+  text-align: right;
+}

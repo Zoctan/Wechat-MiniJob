@@ -1,0 +1,73 @@
+<view class="nav">
+  <view class="nav-item borders-right {{ twoStage ? 'active' : '' }}" bindtap="onTwoStageActive">
+    <view class="content">{{ twoStageDataLeft.label }}</view>
+    <view class="icon dropdownIcon" />
+  </view>
+  <view class="nav-item borders-right {{ radio ? 'active' : '' }}" bindtap="onRadioActive">
+    <view class="content">{{ radioData.label }}</view>
+    <view class="icon dropdownIcon" />
+  </view>
+  <view class="nav-item borders-right {{ sort ? 'active' : '' }}" bindtap="onSortActive">
+    <view class="content">{{ sortData.label }}</view>
+    <view class="icon dropdownIcon" />
+  </view>
+  <view class="nav-item {{ multi ? 'active' : '' }}" bindtap="onMultiActive">
+    <view class="content">{{ multiData.label }}</view>
+    <view class="icon filterIcon" />
+  </view>
+</view>
+
+<view class="mask" hidden="{{ !(twoStage || radio || sort || multi) }}" style="top: {{ top }}" bindtap="closeFilter" />
+
+<view class="filter {{ twoStage ? 'show' : 'hide' }}">
+  <view class="items left">
+    <view class="{{ twoStageSelectedLeft.value === item.value ? 'current' : '' }}" wx:for="{{ twoStageDataLeft.children }}" bindtap="onTwoStageLeft" data-group="{{ twoStageDataLeft }}" data-item="{{ item }}" wx:key="unique">{{ item.label }}</view>
+  </view>
+  <view class="items right">
+    <view class="{{ twoStageSelectedRight === item.value ? 'current' : '' }}" wx:for="{{ twoStageDataRight }}" bindtap="onTwoStageRight" data-group="{{ twoStageDataLeft }}" data-item="{{ item }}" wx:key="unique">{{ item.label }}</view>
+  </view>
+</view>
+
+<view class="filter {{ radio ? 'show' : 'hide' }} ">
+  <block wx:for="{{ radioData.children }}" wx:key="unique">
+    <view class="item {{ radioSelected === item.value ? 'active' : '' }}" data-group="{{ radioData }}" data-item="{{ item }}" bindtap="onRadio">{{ item.label }}</view>
+  </block>
+</view>
+<view class="filter {{ sort ? 'show' : 'hide' }} ">
+  <block wx:for="{{ sortData.children }}" wx:key="unique">
+    <view class="item {{ sortSelected === item.value ? 'active' : '' }}" data-group="{{ sortData }}" data-item="{{ item }}" bindtap="onSort">{{ item.label }}</view>
+  </block>
+</view>
+<view class="filter {{ multi ? 'show' : 'hide' }} ">
+  <scroll-view scroll-y>
+    <block wx:for="{{ multiData.children }}" wx:for-item="group" wx:key="unique">
+      <view class="multi-item">
+        <view class="header">
+          <div class="label">{{ group.label }}</div>
+        </view>
+        <view class="body">
+          <block wx:for="{{ group.children }}" wx:for-item="item" wx:key="unique">
+            <view class="radio {{ common.selected(multiSelected, group.value + ':' + item.value) ? 'active' : 'inactive' }}" data-group="{{ group }}" data-item="{{ item }}" bindtap="onMultiChange">{{ item.label }}</view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <div class="buttons">
+    <view class="reset" bindtap="onMultiReset">重置</view>
+    <view class="confirm" bindtap="onMultiConfirm">确定</view>
+  </div>
+</view>
+
+<wxs module="common">
+  module.exports = {
+    selected: function(multiSelected, value) {
+      for (var i = 0; i < multiSelected.length; i++) {
+        if (multiSelected[i].value === value) {
+          return true
+        }
+      }
+      return false
+    }
+  }
+</wxs>

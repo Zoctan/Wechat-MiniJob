@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "基本信息",
+  "usingComponents": {
+    "wux-button": "/ui/button/index",
+    "wux-date-picker": "/ui/date-picker/index",
+    "wux-picker": "/ui/picker/index",
+    "wux-cell": "/ui/cell/index",
+    "wux-textarea": "/ui/textarea/index",
+    "wux-input": "/ui/input/index",
+    "wux-icon": "/ui/icon/index",
+    "wux-upload": "/ui/upload/index"
+  }
+}

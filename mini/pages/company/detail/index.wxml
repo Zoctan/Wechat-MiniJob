@@ -1,0 +1,111 @@
+<view class="container" wx:if="{{ noData }}">
+  <!-- 加载 -->
+  <view class="loading" wx:if="{{ loading }}">
+    <wux-spin wux-class="spin" size="small" />
+    <view class="text secondary-text-color font-size-28">加载中</view>
+  </view>
+
+  <!-- 无公司信息 -->
+  <view class="no-data" wx:if="{{ !loading && noData }}">
+    <image class="img" src="/images/noData.png" mode="widthFix"></image>
+    <text class="secondary-text-color font-size-28">该公司已被删除</text>
+    <navigator class="button" url="/pages/position/list/index" open-type="switchTab">返回首页</navigator>
+  </view>
+</view>
+
+<!-- 公司信息 -->
+<view class="company-detail" wx:if="{{ !loading && !noData }}">
+  <view class="card-box">
+    <view class="company-name">{{ company.name || '' }}</view>
+    <view class="company-word">{{ company.word || '' }}</view>
+    <view class="tag-list">
+      <view class="tag" wx:if="{{ company.scaleLabel}}">{{ company.scaleLabel }}</view>
+      <view class="tag" wx:if="{{ company.industryLabel }}">{{ company.industryLabel }}</view>
+      <view class="tag" wx:if="{{ company.processLabel }}">{{ company.processLabel }}</view>
+    </view>
+    <image class="logo" src="{{ company.logoUrl }}"></image>
+  </view>
+  <view class="company-position-box">
+    <view class="tabs">
+      <view class="tab {{ tabIndex === '1' ? 'active' : '' }}" catchtap="switchTab" data-tab="1">公司介绍</view>
+      <view class="tab {{ tabIndex === '2' ? 'active' : '' }}" catchtap="switchTab" data-tab="2">在招职位</view>
+    </view>
+    <view class="company-box" hidden="{{ tabIndex === '2' }}">
+      <view class="company-introduction">
+        <view class="info-header">公司简介</view>
+        <view class="content {{ isIntroductionOpen ? 'height-auto' : '' }}">
+          <rich-text nodes="{{ company.introduction || '' }}"></rich-text>
+        </view>
+        <view class="arrow-up-down">
+          <wux-icon type="{{ isIntroductionOpen ? 'ios-arrow-up' : 'ios-arrow-down' }} " color="#5cb3ff" size="20" catchtap="downOrUp" />
+        </view>
+      </view>
+      <view class="company-contact">
+        <view class="info-header">联系方式</view>
+        <view class="nav-box" bindtap="onCalled" data-phone="{{ company.telephone }}">
+          <view class="left">
+            <wux-icon type="ios-call" color="#5cb3ff" size="20" />
+          </view>
+          <view class="center">
+            <view class="city primary-text-color font-size-28">联系人：{{ company.liaison }}</view>
+            <view class="city-detail secondary-text-color font-size-24">电 话：{{ company.telephone }}</view>
+          </view>
+          <view class="right">
+            <wux-icon type="ios-arrow-forward" color="#bdbdbd" size="26rpx" />
+          </view>
+        </view>
+      </view>
+      <view class="company-address">
+        <view class="info-header">公司地址</view>
+        <navigator class="nav-box" url="/pages/map/index?title={{ company.name }}&latitude={{ company.addressLatitude }}&longitude={{ company.addressLongitude }}">
+          <view class="left">
+            <wux-icon type="ios-pin" color="#5cb3ff" size="20" />
+          </view>
+          <view class="center">
+            <view class="city primary-text-color font-size-28">{{ company.address }}</view>
+            <view class="city-detail secondary-text-color font-size-24">{{ company.addressDetail }}</view>
+          </view>
+          <view class="right">
+            <wux-icon type="ios-arrow-forward" color="#bdbdbd" size="26rpx" />
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class="position-box" hidden="{{ tabIndex === '1' }}">
+      <!-- search area -->
+      <view class="search-bar" wx:if="{{ (positionList && positionList.length > 0) || search.positionName }}">
+        <view class="search-bar-box">
+          <icon class="icon-search" type="search" size="14"></icon>
+          <input type="text" class="search-bar-input" placeholder="按职位名称搜索" confirm-type="search" value="{{ search.positionName }}" bindblur="onBlur" bindconfirm="onSearch" />
+        </view>
+      </view>
+      <view class="loading" wx:if="{{ positionListLoading }}">
+        <view class="no-position" wx:if="{{ !positionListLoading && noPositionList }}">没有查询到职位~</view>
+        <wux-spin wux-class="spin" size="small" />
+        <view class="text secondary-text-color font-size-28">加载中</view>
+      </view>
+      <!-- 职位列表  -->
+      <view class="position-list">
+        <block wx:for="{{ positionList }}" wx:key="{{ position.id }}" wx:for-item="position">
+          <navigator class="position" data-item="{{ position }}" url="/pages/position/detail/index?positionId={{ position.id }}">
+            <view class="top">
+              <view class="name">{{ position.name }}</view>
+              <view class="salary red-color">{{ position.salaryNegotiated ? '面议' : (position.salaryLowest || 0) + 'k-' + (position.salaryHighest || 0) + 'k' }}</view>
+            </view>
+            <view class="center">
+              <view class="tag">{{ position.workCity }}</view>
+              <view class="tag">{{ position.typeLabel }}</view>
+            </view>
+            <view class="bottom">
+              <view class="time">发布时间：
+                <timeago data="{{ position.createTime }}"></timeago>
+              </view>
+              <view class="visit">浏览次数：{{ position.visit || 0 }}</view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<wux-white-space size="default" />

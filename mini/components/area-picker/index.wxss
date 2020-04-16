@@ -1,0 +1,30 @@
+.cell {
+  padding: 20rpx 30rpx;
+  display: flex;
+}
+
+.cell .label {
+  width: 140rpx;
+  margin-right: 10rpx;
+  flex: 1;
+}
+
+.cell .content {
+  text-align: right;
+  color: grey;
+}
+
+.cell .content:after {
+  content: " ";
+  display: inline-block;
+  height: 12rpx;
+  width: 12rpx;
+  border-width: 4rpx 4rpx 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  position: relative;
+  top: -4rpx;
+  right: 4rpx;
+  margin-left: 12rpx;
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "公司详情",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wux-icon": "/ui/icon/index",
+    "wux-spin": "/ui/spin/index",
+    "wux-white-space": "/ui/white-space/index"
+  }
+}

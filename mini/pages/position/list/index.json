@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "filterbar": "/components/filterbar/index",
+    "wux-white-space": "/ui/white-space/index",
+    "wux-search-bar": "/ui/search-bar/index",
+    "wux-timeago": "/ui/timeago/index",
+    "wux-spin": "/ui/spin/index"
+  }
+}

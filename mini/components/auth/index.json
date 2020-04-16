@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "wux-button": "/ui/button/index"
+  }
+}

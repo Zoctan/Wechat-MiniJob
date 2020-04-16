@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "作品",
+  "usingComponents": {
+    "wux-button": "/ui/button/index",
+    "wux-cell": "/ui/cell/index",
+    "wux-textarea": "/ui/textarea/index",
+    "wux-input": "/ui/input/index"
+  }
+}

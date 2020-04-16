@@ -1,0 +1,101 @@
+.container {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .loading .text {
+  margin-left: 16rpx;
+}
+
+.container .no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .no-data .img {
+  width: 140rpx;
+  margin-bottom: 40rpx;
+}
+
+.card-box {
+  margin: 24rpx 0 24rpx 0;
+  background: #fff;
+  padding-left: 30rpx;
+}
+
+.card-box .company {
+  display: flex;
+  align-items: center;
+}
+
+.card-box .company .logo {
+  width: 84rpx;
+  height: 84rpx;
+  margin-right: 16rpx;
+}
+
+.card-box .company .logo image {
+  width: 100%;
+  height: 100%;
+}
+
+.card-box .list {
+}
+
+.card-box .list .item {
+  padding: 30rpx 20px 10px 0;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.card-box .list .item .top {
+  display: flex;
+  align-items: center;
+}
+
+.card-box .list .item .top .urgent {
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+  background: #f00;
+  border-radius: 6rpx;
+  margin-right: 16rpx;
+  font-size: 22rpx;
+  color: #fff;
+  height: 30rpx;
+}
+
+.card-box .list .item .top .left {
+  flex: 1;
+}
+
+.card-box .list .item .center {
+  display: flex;
+  margin-top: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.card-box .list .item .center  .tag {
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+  background: rgba(245, 245, 245, 1);
+  border-radius: 6rpx;
+  margin-right: 16rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.card-box .list .item .bottom {
+  display: flex;
+}
+
+.card-box .list .item .bottom .left {
+  flex: 1;
+}

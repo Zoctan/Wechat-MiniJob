@@ -1,0 +1,34 @@
+<wxs module="util" src="../../../wxs/util.wxs" />
+
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="公司" value="{{ company }}" placeholder="请输入公司名称" error="{{ companyError }}" bind:change="onCompanyChange" bind:focus="onCompanyFocus" bind:blur="onCompanyBlur" bind:clear="onCompanyClear" bind:error="onCompanyError"></wux-input>
+  </wux-cell>
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="职位" value="{{ position }}" placeholder="请输入职位名称" error="{{ positionError }}" bind:change="onPositionChange" bind:focus="onPositionFocus" bind:blur="onPositionBlur" bind:clear="onPositionClear"
+      bind:error="onPositionError"></wux-input>
+  </wux-cell>
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="部门" value="{{ department }}" placeholder="请输入部门名称" error="{{ departmentError }}" bind:change="onDepartmentChange" bind:focus="onDepartmentFocus" bind:blur="onDepartmentBlur" bind:clear="onDepartmentClear"
+      bind:error="onDepartmentError"></wux-input>
+  </wux-cell>
+  <wux-date-picker mode="date" value="{{ startTime }}" bind:confirm="onStartTimeConfirm" minDate="1949-10-01 00:00:00" maxDate="{{ util.currentTime('-') }}">
+    <wux-cell title="开始时间" is-link extra="{{ displayStartTime }}"></wux-cell>
+  </wux-date-picker>
+  <wux-date-picker mode="date" value="{{ endTime }}" bind:confirm="onEndTimeConfirm" minDate="1949-10-01 00:00:00" maxDate="{{ util.currentTime('-') }}">
+    <wux-cell title="结束时间" is-link extra="{{ displayEndTime }}"></wux-cell>
+  </wux-date-picker>
+  <wux-cell title="是否在职" hover-class="none">
+    <wux-switch slot="footer" color="calm" value="{{ isWorking }}" bind:change="onIsWorkingChange" />
+  </wux-cell>
+</view>
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-textarea clear controlled hasCount rows="6" maxlength="1000" value="{{ description }}" placeholder="工作描述" error="{{ descriptionError }}" bind:change="onDescriptionChange" bind:focus="onDescriptionFocus" bind:blur="onDescriptionBlur" bind:clear="onDescriptionClear"
+      bind:error="onDescriptionError"></wux-textarea>
+  </wux-cell>
+</view>
+
+<view class="button">
+  <wux-button block type="balanced" bind:click="onSubmit">完成</wux-button>
+</view>

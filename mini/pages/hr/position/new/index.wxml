@@ -1,0 +1,25 @@
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="职位" value="{{ school }}" placeholder="请输入职位名称" error="{{ schoolError }}" bind:change="onSchoolChange" bind:focus="onSchoolFocus" bind:blur="onSchoolBlur" bind:clear="onSchoolClear" bind:error="onSchoolError"></wux-input>
+  </wux-cell>
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="专业" value="{{ major }}" placeholder="请输入专业名称" error="{{ majorError }}" bind:change="onMajorChange" bind:focus="onMajorFocus" bind:blur="onMajorBlur" bind:clear="onMajorClear" bind:error="onMajorError"></wux-input>
+  </wux-cell>
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="学历" value="{{ qualification }}" placeholder="请输入学历" error="{{ qualificationError }}" bind:change="onQualificationChange" bind:focus="onQualificationFocus" bind:blur="onQualificationBlur" bind:clear="onQualificationClear"
+      bind:error="onQualificationError"></wux-input>
+  </wux-cell>
+  <wux-cell title="是否在读" hover-class="none">
+    <wux-switch slot="footer" color="calm" value="{{ isReading }}" bind:change="onIsReadingChange" />
+  </wux-cell>
+</view>
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-textarea clear controlled hasCount rows="6" maxlength="1000" value="{{ description }}" placeholder="教育描述" error="{{ descriptionError }}" bind:change="onDescriptionChange" bind:focus="onDescriptionFocus" bind:blur="onDescriptionBlur" bind:clear="onDescriptionClear"
+      bind:error="onDescriptionError"></wux-textarea>
+  </wux-cell>
+</view>
+
+<view class="button">
+  <wux-button block type="balanced" bind:click="onSubmit">完成</wux-button>
+</view>

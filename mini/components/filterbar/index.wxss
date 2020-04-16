@@ -1,0 +1,175 @@
+.nav {
+  position: relative;
+  z-index: 99;
+  display: flex;
+  border-bottom: 1rpx solid #d1d3d4;
+  background: #fff;
+}
+
+.nav-item {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  height: 42rpx;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  margin: 20rpx 0;
+}
+
+.nav-item.active .content {
+  color: #fa871e;
+}
+
+.nav-item.active .icon {
+  border-bottom: 8rpx solid #fa871e;
+  border-top: 0;
+}
+
+.borders-right {
+  border-right: 1rpx solid #e6e6e6;
+}
+
+.content {
+  display: inline-block;
+}
+
+.icon.dropdownIcon {
+  display: inline-block;
+  border: 8rpx solid transparent;
+  border-top: 8rpx solid #9b9b9b;
+  margin-left: 10rpx;
+}
+
+.icon.filterIcon {
+  width: 8rpx;
+  height: 8rpx;
+  border-top: 4rpx solid #9b9b9b;
+  border-bottom: 4rpx solid #9b9b9b;
+  background-color: #9b9b9b;
+  padding: 4rpx 0;
+  background-clip: content-box;
+  margin-left: 10rpx;
+}
+
+.mask {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.filter {
+  width: 100%;
+  max-height: 850rpx;
+  z-index: 2;
+  position: absolute;
+  overflow-y: scroll;
+  background: #fff;
+}
+
+.filter .items {
+  overflow-y: scroll;
+  float: left;
+  height: 100%;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.filter .items view {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: 15rpx;
+}
+
+.items.left {
+  width: 40%;
+  background: #f7f7f7;
+}
+
+.items.right {
+  width: 60%;
+  background: #fff;
+}
+
+.items .current {
+  background: #fff;
+  color: #fa871e;
+}
+
+.filter .item {
+  border-bottom: solid #f7f7f7 1rpx;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+}
+
+.item.active {
+  color: #fa871e;
+}
+
+.filter .multi-item {
+  float: left;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+
+.multi-item .header {
+  padding: 5rpx 0 0 15rpx;
+}
+
+.multi-item .body {
+  padding-left: 15rpx;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.multi-item .body .radio {
+  margin: 8rpx 12px 16rpx 0;
+  font-size: 28rpx;
+  padding: 8rpx 16rpx 8rpx 16rpx;
+}
+
+.radio.inactive {
+  background: #f5f5f5;
+  border: 1rpx solid #f5f5f5;
+  color: #212121;
+}
+
+.radio.active {
+  color: #fa871e;
+  background: #fff;
+  border: 1rpx solid #fa871e;
+}
+
+.filter .buttons {
+  margin-top: 25rpx;
+  line-height: 70rpx;
+  text-align: center;
+  display: flex;
+}
+
+.buttons .reset {
+  flex: 1;
+  border-top: 1rpx solid #ddd;
+}
+
+.buttons .confirm {
+  flex: 1;
+  color: #fff;
+  border-top: 1rpx solid #fa871e;
+  background: #fa871e;
+}
+
+.filter.hide {
+  display: none;
+}
+
+.filter.show {
+  display: block;
+}

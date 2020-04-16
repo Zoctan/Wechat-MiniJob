@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "语言",
+  "usingComponents": {
+    "wux-button": "/ui/button/index",
+    "wux-picker": "/ui/picker/index",
+    "wux-cell": "/ui/cell/index",
+    "wux-input": "/ui/input/index"
+  }
+}

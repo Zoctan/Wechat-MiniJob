@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "wux-button": "/ui/button/index",
+    "wux-icon": "/ui/icon/index",
+    "wux-badge": "/ui/badge/index",
+    "wux-cell": "/ui/cell/index"
+  }
+}

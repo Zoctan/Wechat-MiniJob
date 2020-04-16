@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "求职记录",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wux-white-space": "/ui/white-space/index",
+    "wux-spin": "/ui/spin/index",
+    "wux-steps": "/ui/steps/index",
+    "wux-step": "/ui/step/index",
+    "wux-accordion-group": "/ui/accordion-group/index",
+    "wux-accordion": "/ui/accordion/index"
+  }
+}

@@ -1,0 +1,15 @@
+<wxs module="util" src="../../../wxs/util.wxs" />
+
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="证书/奖项" value="{{ certificate }}" placeholder="请输入证书/奖项名称" error="{{ certificateError }}" bind:change="onCertificateChange" bind:focus="onCertificateFocus" bind:blur="onCertificateBlur" bind:clear="onCertificateClear"
+      bind:error="onCertificateError"></wux-input>
+  </wux-cell>
+  <wux-date-picker mode="date" value="{{ time }}" bind:confirm="onTimeConfirm" minDate="1949-10-01 00:00:00" maxDate="{{ util.currentTime('-') }}">
+    <wux-cell title="获得时间" extra="{{ displayTime }}" is-link></wux-cell>
+  </wux-date-picker>
+</view>
+
+<view class="button">
+  <wux-button block type="balanced" bind:click="onSubmit">完成</wux-button>
+</view>

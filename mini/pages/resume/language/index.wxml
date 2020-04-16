@@ -1,0 +1,12 @@
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="语种" value="{{ language }}" placeholder="请输入语种名称" error="{{ languageError }}" bind:change="onLanguageChange" bind:focus="onLanguageFocus" bind:blur="onLanguageBlur" bind:clear="onLanguageClear" bind:error="onLanguageError"></wux-input>
+  </wux-cell>
+  <wux-picker options="{{ levels }}" value="{{ level }}" cascade cols="1" bind:confirm="onLevelConfirm">
+    <wux-cell title="掌握程度" extra="{{ displayLevel }}" is-link></wux-cell>
+  </wux-picker>
+</view>
+
+<view class="button">
+  <wux-button block type="balanced" bind:click="onSubmit">完成</wux-button>
+</view>

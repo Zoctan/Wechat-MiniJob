@@ -1,0 +1,6 @@
+<picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{ multiIndex }}" range="{{ multiArray }}">
+  <view class="cell">
+    <view class="label">城市</view>
+    <view class="content">{{ multiArray[0][multiIndex[0]] }} {{ multiArray[1][multiIndex[1]] }} {{ multiArray[2][multiIndex[2]] }}</view>
+  </view>
+</picker>

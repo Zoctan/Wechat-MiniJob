@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "证书/奖项",
+  "usingComponents": {
+    "wux-button": "/ui/button/index",
+    "wux-date-picker": "/ui/date-picker/index",
+    "wux-cell": "/ui/cell/index",
+    "wux-input": "/ui/input/index"
+  }
+}

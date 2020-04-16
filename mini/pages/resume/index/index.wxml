@@ -1,0 +1,209 @@
+<view class="container" wx:if="{{ loading }}">
+  <view class="loading">
+    <wux-spin wux-class="spin" size="small" />
+    <view class="text secondary-text-color font-size-28">加载中</view>
+  </view>
+</view>
+
+<view class="info">
+  <image class="avatar" mode="aspectFit" src="/images/avatar.png" />
+  <block wx:if="{{ !resume.name || !resume.birthday || !resume.sex || !resume.mail || !resume.phone || !resume.introduction }}">
+    <view class="white-color">请完善基本信息</view>
+  </block>
+  <block wx:else>
+    <view class="white-color">姓名：{{ resume.name || '请完善' }}</view>
+    <view class="white-color">生日：{{ resume.birthday || '请完善' }}</view>
+    <view class="white-color">性别：{{ resume.sex || '请完善' }}</view>
+    <view class="white-color">邮箱：{{ resume.email || '请完善' }}</view>
+    <view class="white-color">手机：{{ resume.phone || '请完善' }}</view>
+    <view class="white-color">自我介绍：{{ resume.introduction || '请完善' }}</view>
+  </block>
+  <navigator class="edit" url="/pages/resume/basic/index">
+    <wux-icon type="ios-brush" size="32rpx" color="#fff" />
+  </navigator>
+</view>
+
+<view class="card-box">
+  <view class="header">
+    <view class="title">工作经历</view>
+  </view>
+  <view class="content">
+    <view class="list" wx:if="{{ resume.workList && resume.workList.length > 0 }}">
+      <block wx:for="{{ resume.workList }}" wx:for-item="work" wx:key="work.id">
+        <view class="item">
+          <navigator class="edit" url="/pages/resume/work/index?workId={{ work.id }}">
+            <wux-icon type="ios-brush" size="32rpx" color="#03a9f4" />
+          </navigator>
+          <view class="">{{ work.company }}</view>
+          <view class="font-size-30 secondary-text-color">{{ work.position }}</view>
+          <view class="font-size-30 secondary-text-color">{{ work.startTime + ' 至 ' + work.endTime }}</view>
+        </view>
+      </block>
+    </view>
+    <navigator class="add-data" url="/pages/resume/work/index">
+      <wux-icon type="ios-add" size="50rpx" />
+      <view class="text">新增工作经历</view>
+    </navigator>
+  </view>
+</view>
+<view class="card-box">
+  <view class="header">
+    <view class="title">教育经历</view>
+  </view>
+  <view class="content">
+    <view class="list" wx:if="{{ resume.educationList && resume.educationList.length > 0 }}">
+      <block wx:for="{{ resume.educationList }}" wx:for-item="education" wx:key="education.id">
+        <view class="item">
+          <navigator class="edit" url="/pages/resume/education/index?educationId={{ education.id }}">
+            <wux-icon type="ios-brush" size="32rpx" color="#03a9f4" />
+          </navigator>
+          <view class="">{{ education.school }}</view>
+          <view class="font-size-30 secondary-text-color">{{ education.major }}</view>
+          <view class="font-size-30 secondary-text-color">{{ education.startTime + ' 至 ' + education.endTime }}</view>
+        </view>
+      </block>
+    </view>
+    <navigator class="add-data" url="/pages/resume/education/index">
+      <wux-icon type="ios-add" size="50rpx" />
+      <view class="text">新增教育经历</view>
+    </navigator>
+  </view>
+</view>
+<view class="card-box">
+  <view class="header">
+    <view class="title">项目经验</view>
+  </view>
+  <view class="content">
+    <view class="list" wx:if="{{ resume.projectList && resume.projectList.length > 0 }}">
+      <block wx:for="{{ resume.projectList }}" wx:for-item="project" wx:key="project.id">
+        <view class="item">
+          <navigator class="edit" url="/pages/resume/project/index?projectId={{ project.id }}">
+            <wux-icon type="ios-brush" size="32rpx" color="#03a9f4" />
+          </navigator>
+          <view class="">{{ project.name }}</view>
+          <view class="font-size-30 secondary-text-color">{{ project.startTime + ' 至 ' + project.endTime }}</view>
+        </view>
+      </block>
+    </view>
+    <navigator class="add-data" url="/pages/resume/project/index">
+      <wux-icon type="ios-add" size="50rpx" />
+      <view class="text">新增项目经验</view>
+    </navigator>
+  </view>
+</view>
+<view class="card-box">
+  <view class="header">
+    <view class="title">语言</view>
+  </view>
+  <view class="content">
+    <view class="list" wx:if="{{ resume.languageList && resume.languageList.length > 0 }}">
+      <block wx:for="{{ resume.languageList }}" wx:for-item="language" wx:key="language.id">
+        <view class="item">
+          <navigator class="edit" url="/pages/resume/language/index?languageId={{ language.id }}">
+            <wux-icon type="ios-brush" size="32rpx" color="#03a9f4" />
+          </navigator>
+          <view class="">{{ language.name }}</view>
+          <view class="font-size-30 secondary-text-color">{{ language.level }}</view>
+        </view>
+      </block>
+    </view>
+    <navigator class="add-data" url="/pages/resume/language/index">
+      <wux-icon type="ios-add" size="50rpx" />
+      <view class="text">新增语言</view>
+    </navigator>
+  </view>
+</view>
+<view class="card-box">
+  <view class="header">
+    <view class="title">技能</view>
+  </view>
+  <view class="content">
+    <view class="list" wx:if="{{ resume.skillList && resume.skillList.length > 0 }}">
+      <block wx:for="{{ resume.skillList }}" wx:for-item="skill" wx:key="skill.id">
+        <view class="item">
+          <navigator class="edit" url="/pages/resume/skill/index?skillId={{ skill.id }}">
+            <wux-icon type="ios-brush" size="32rpx" color="#03a9f4" />
+          </navigator>
+          <view class="">{{ skill.name }}</view>
+          <wux-rater slot="footer" default-value="{{ skill.level }}" />
+        </view>
+      </block>
+    </view>
+    <navigator class="add-data" url="/pages/resume/skill/index">
+      <wux-icon type="ios-add" size="50rpx" />
+      <view class="text">新增技能</view>
+    </navigator>
+  </view>
+</view>
+<view class="card-box">
+  <view class="header">
+    <view class="title">证书/奖项</view>
+  </view>
+  <view class="content">
+    <view class="list" wx:if="{{ resume.certificateList && resume.certificateList.length > 0 }}">
+      <block wx:for="{{ resume.certificateList }}" wx:for-item="certificate" wx:key="certificate.id">
+        <view class="item">
+          <navigator class="edit" url="/pages/resume/certificate/index?certificateId={{ certificate.id }}">
+            <wux-icon type="ios-brush" size="32rpx" color="#03a9f4" />
+          </navigator>
+          <view class="">{{ certificate.name }}</view>
+          <view class="font-size-30 secondary-text-color">{{ certificate.time }}</view>
+        </view>
+      </block>
+    </view>
+    <navigator class="add-data" url="/pages/resume/certificate/index">
+      <wux-icon type="ios-add" size="50rpx" />
+      <view class="text">新增证书/奖项</view>
+    </navigator>
+  </view>
+</view>
+<view class="card-box">
+  <view class="header">
+    <view class="title">作品</view>
+  </view>
+  <view class="content">
+    <view class="list" wx:if="{{ resume.siteList && resume.siteList.length > 0 }}">
+      <block wx:for="{{ resume.siteList }}" wx:for-item="site" wx:key="site.id">
+        <view class="item">
+          <navigator class="edit" url="/pages/resume/site/index?siteId={{ site.id }}">
+            <wux-icon type="ios-brush" size="32rpx" color="#03a9f4" />
+          </navigator>
+          <view class="">{{ site.name }}</view>
+          <view class="font-size-30 light-blue-color">{{ site.link }}</view>
+        </view>
+      </block>
+    </view>
+    <navigator class="add-data" url="/pages/resume/site/index">
+      <wux-icon type="ios-add" size="50rpx" />
+      <view class="text">新增作品</view>
+    </navigator>
+  </view>
+</view>
+<view class="card-box">
+  <view class="header">
+    <view class="title">求职意愿</view>
+    <navigator class="edit" url="/pages/resume/wish/index">
+      <wux-icon type="ios-brush" size="32rpx" color="#03a9f4" />
+    </navigator>
+  </view>
+  <view class="content">
+    <view class="list" wx:if="{{ resume.wishList && resume.wishList.length > 0 }}">
+      <block wx:for="{{ resume.wishList }}" wx:for-item="wish" wx:key="wish.id">
+        <view class="item">
+          <navigator class="edit" url="/pages/resume/wish/index?wishId={{ wish.id }}">
+            <wux-icon type="ios-brush" size="32rpx" color="#03a9f4" />
+          </navigator>
+          <view class="font-size-30">期望职位：{{ wish.position }}</view>
+          <view class="font-size-30">工作类型：{{ wish.type }}</view>
+          <view class="font-size-30">期望城市：{{ wish.region }}</view>
+          <view class="font-size-30">期望薪水：{{ wish.salaryLowest + 'k-' + wish.salaryHighest + 'k' }}</view>
+        </view>
+      </block>
+    </view>
+    <navigator class="add-data" url="/pages/resume/wish/index">
+      <wux-icon type="ios-add" size="50rpx" />
+      <view class="text">求职意愿</view>
+    </navigator>
+  </view>
+</view>
+<wux-white-space size="default" />

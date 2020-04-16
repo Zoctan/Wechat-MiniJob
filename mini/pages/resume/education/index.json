@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "教育经历",
+  "usingComponents": {
+    "wux-button": "/ui/button/index",
+    "wux-switch": "/ui/switch/index",
+    "wux-date-picker": "/ui/date-picker/index",
+    "wux-cell": "/ui/cell/index",
+    "wux-textarea": "/ui/textarea/index",
+    "wux-input": "/ui/input/index"
+  }
+}

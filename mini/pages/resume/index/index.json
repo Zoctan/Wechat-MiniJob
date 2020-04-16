@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "个人简历",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wux-white-space": "/ui/white-space/index",
+    "wux-spin": "/ui/spin/index",
+    "wux-icon": "/ui/icon/index",
+    "wux-rater": "/ui/rater/index"
+  }
+}

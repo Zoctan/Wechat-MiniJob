@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "添加职位",
+  "usingComponents": {
+    "wux-button": "/ui/button/index",
+    "wux-switch": "/ui/switch/index",
+    "wux-cell": "/ui/cell/index",
+    "wux-textarea": "/ui/textarea/index",
+    "wux-input": "/ui/input/index"
+  }
+}

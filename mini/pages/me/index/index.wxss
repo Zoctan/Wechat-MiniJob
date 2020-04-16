@@ -1,0 +1,55 @@
+.header {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 250rpx;
+  background: #03a9f4;
+}
+
+.header .notice {
+  position: absolute;
+  right: 65rpx;
+  top: 25rpx;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info .avatar {
+  height: 128rpx;
+  width: 128rpx;
+  border-radius: 50%;
+  margin-bottom: 24rpx;
+}
+
+.info .nickname {
+  text-align: center;
+  color: #fff;
+}
+
+.card-box {
+  position: absolute;
+  top: 220rpx;
+  right: 24rpx;
+  left: 24rpx;
+  padding: 24rpx 24rpx 8rpx 24rpx;
+  background: #fff;
+  box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(211, 211, 211, 0.68);
+  border-radius: 8rpx;
+}
+
+.group {
+  padding-bottom: 32rpx;
+}
+
+.group .title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.group .list {
+}

@@ -1,0 +1,61 @@
+{
+  "debug": true,
+  "networkTimeout": {
+    "request": 20000,
+    "uploadFile": 250000,
+    "downloadFile": 300000
+  },
+  "sitemapLocation": "sitemap.json",
+  "pages": [
+    "pages/position/list/index",
+    "pages/position/detail/index",
+    "pages/company/list/index",
+    "pages/company/detail/index",
+    "pages/me/index/index",
+    "pages/me/detail/index",
+    "pages/me/collect/index",
+    "pages/me/record/index",
+    "pages/resume/index/index",
+    "pages/resume/certificate/index",
+    "pages/resume/education/index",
+    "pages/resume/language/index",
+    "pages/resume/project/index",
+    "pages/resume/site/index",
+    "pages/resume/skill/index",
+    "pages/resume/wish/index",
+    "pages/resume/work/index",
+    "pages/hr/position/list/index",
+    "pages/hr/position/new/index",
+    "pages/hr/recruit/list/index",
+    "pages/hr/recruit/detail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#03A9F4"
+  },
+  "tabBar": {
+    "color": "#c6c8c9",
+    "selectedColor": "#43484d",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/tabbar/position2.png",
+        "iconPath": "images/tabbar/position.png",
+        "pagePath": "pages/position/list/index",
+        "text": "职位"
+      },
+      {
+        "selectedIconPath": "images/tabbar/company2.png",
+        "iconPath": "images/tabbar/company.png",
+        "pagePath": "pages/company/list/index",
+        "text": "公司"
+      },
+      {
+        "selectedIconPath": "images/tabbar/me2.png",
+        "iconPath": "images/tabbar/me.png",
+        "pagePath": "pages/me/index/index",
+        "text": "我的"
+      }
+    ]
+  }
+}

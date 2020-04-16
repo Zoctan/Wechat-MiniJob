@@ -1,0 +1,24 @@
+<view class="auth-mask" wx:if="{{ show }}">
+  <view class="auth-box">
+    <view class="auth-left">
+      <image class="logo" src="/images/logo.png" />
+    </view>
+    <view class="auth-right" wx:if="{{ !hasWechatInfo }}">
+      <view class="auth-description">
+        <view>人才招聘申请获取以下权限：</view>
+        <view>获取您的公开信息（头像、昵称等）</view>
+      </view>
+      <view class="auth-button">
+        <wux-button block type="balanced" openType="getUserInfo" bind:getuserinfo="onGotUserInfo">授权登录</wux-button>
+        <wux-button block type="assertive" bind:click="onCancelledGetUserInfo">取消</wux-button>
+      </view>
+    </view>
+    <view class="auth-right" wx:else>
+      <view class="auth-description">信息已过期，请重新登录</view>
+      <view class="auth-button">
+        <wux-button block type="balanced" bind:click="onRefreshToken">重新登录</wux-button>
+        <wux-button block type="assertive" bind:click="onCancelledRefreshToken">取消</wux-button>
+      </view>
+    </view>
+  </view>
+</view>

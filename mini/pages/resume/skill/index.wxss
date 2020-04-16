@@ -1,0 +1,8 @@
+.card-box {
+  margin: 24rpx 0 24rpx 0;
+  background: #fff;
+}
+
+.button {
+  margin: 50rpx 40rpx 0 40rpx;
+}

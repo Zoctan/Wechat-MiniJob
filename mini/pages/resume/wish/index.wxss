@@ -1,0 +1,28 @@
+.card-box {
+  margin: 24rpx 0 24rpx 0;
+  background: #fff;
+}
+
+.button {
+  margin: 50rpx 40rpx 0 40rpx;
+}
+
+.cell {
+  padding: 20rpx 30rpx;
+  display: flex;
+}
+
+.cell .label {
+  width: 140rpx;
+  margin-right: 10rpx;
+}
+
+.cell .left {
+  flex: 1;
+  text-align: center;
+}
+
+.cell .right {
+  flex: 1;
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="作品名称" value="{{ name }}" placeholder="请输入作品名称" error="{{ nameError }}" bind:change="onNameChange" bind:focus="onNameFocus" bind:blur="onNameBlur" bind:clear="onNameClear" bind:error="onNameError"></wux-input>
+  </wux-cell>
+  <wux-cell hover-class="none">
+    <wux-input clear controlled label="作品链接" value="{{ site }}" placeholder="请输入作品链接" error="{{ siteError }}" bind:change="onSiteChange" bind:focus="onSiteFocus" bind:blur="onSiteBlur" bind:clear="onSiteClear" bind:error="onSiteError"></wux-input>
+  </wux-cell>
+</view>
+
+<view class="card-box">
+  <wux-cell hover-class="none">
+    <wux-textarea clear controlled hasCount rows="6" maxlength="500" value="{{ description }}" placeholder="作品描述" error="{{ descriptionError }}" bind:change="onDescriptionChange" bind:focus="onDescriptionFocus" bind:blur="onDescriptionBlur" bind:clear="onDescriptionClear"
+      bind:error="onDescriptionError"></wux-textarea>
+  </wux-cell>
+</view>
+
+<view class="button">
+  <wux-button block type="balanced" bind:click="onSubmit">完成</wux-button>
+</view>
