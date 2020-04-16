@@ -9,13 +9,21 @@
 
 ## 预览
 
-<img src="https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/index1.png" width="225"/>
 
-<img src="https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/index2.png" width="225"/>
-
-![companyList](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/companyList.png) | ![company1](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/company1.png)
-![company2](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/company2.png) | ![position1](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/position1.png)
-![position2](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/position2.png) | ![me1](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/me1.png)
-![me2](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/me2.png) | ![me3](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/me3.png)
-![me4](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/me4.png) | ![me5](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/me5.png)
-![me6](https://github.com/Zoctan/Wechat-MiniJob/blob/master/README/me6.png) | 
+<table>
+	<tr>
+		<td><img src="README/index1.png" width=270 height=480/></td>
+		<td><img src="README/index2.png" width=270 height=480/></td>
+		<td><img src="README/companyList.png" width=270 height=480/></td>
+		<td><img src="README/company1.png" width=270 height=480/></td>
+		<td><img src="README/company2.png" width=270 height=480/></td>
+		<td><img src="README/position1.png" width=270 height=480/></td>
+		<td><img src="README/position2.png" width=270 height=480/></td>
+		<td><img src="README/me1.png" width=270 height=480/></td>
+		<td><img src="README/me2.png" width=270 height=480/></td>
+		<td><img src="README/me3.png" width=270 height=480/></td>
+		<td><img src="README/me4.png" width=270 height=480/></td>
+		<td><img src="README/me5.png" width=270 height=480/></td>
+		<td><img src="README/me6.png" width=270 height=480/></td>
+	</tr>
+</table>
