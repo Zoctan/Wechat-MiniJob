@@ -1,17 +1,17 @@
-# Wechat-MiniJob
+# 微信招聘小程序
 
 ![stars](https://img.shields.io/github/stars/Zoctan/Wechat-MiniJob.svg?style=flat-square&label=Stars)
 ![license](https://img.shields.io/github/license/Zoctan/Wechat-MiniJob.svg?style=flat-square)
 
-English | [简体中文](./README-zh.md)
+[English](./README.md) | 简体中文
 
-Wechat Mini program —— MiniJob
+微信小程序——微招聘
 
-## Introduction
+## 简介
 
-Only front-end code, basic functions as shown, some functions not develop as well.
+只有前端，功能基本如图所示，部分功能因故暂时搁置开发。
 
-## Preview
+## 预览
 
 <table>
 	<tr>
